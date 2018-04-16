@@ -1,12 +1,14 @@
+
 Práctica 1: Web scraping
-Descripción
-Esta práctica se ha realizado bajo el contexto de la asignatura Tipología y ciclo de vida de los datos, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de web scraping mediante el lenguaje de programación Python para extraer así datos de la web PlaneCrashInfo y generar un dataset.
-Miembros del equipo
-La actividad ha sido realizada de manera individual por Teguayco Gutiérrez González.
-Ficheros del código fuente
-src/main.py: punto de entrada al programa. Inicia el proceso de scraping.
-src/scraper.py: contiene la implementación de la clase AccidentsScraper cuyos métodos generan el conjunto de datos a partir de la base de datos online PlaneCrashInfo.
-src/reason_classifier.py: contiene la implementación de la clase que se encarga de asignar una causa a un resumen de accidente dado. Para ello, utiliza la librería TextBlob.
-Recursos
-Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.
-Mitchel, R. (2015). Web Scraping with Python: Collecting Data from the Modern Web. O'Reilly Media, Inc. Chapter 1. Your First Web Scraper.
+En esta practica nos ha faltado poder extraer la url del sorteo anterior:
+
+    for ant in soup.find_all('div', {'class': 'contenedorEnlaces'}):
+        for ante in ant.find_all('div', {'class': 'resultadoAnterior'}):
+            print (ante['href'])
+
+Con esta url que iría variando cada vez que entras en la anterior podríamos extraer todos los sorteos que quisieramos, mi intención era poder extraer un mes, que en este caso sería repetir el scraping 8 veces.
+
+Tambíen me ha faltado poder ir añadiendo los sorteos anteriores al fichero, con el siguiente código solo podia extraer el primer sorteo.
+
+df= pd.DataFrame(combinacion, columns=['c1','c2','c3','c4','c5','c6','Reintegro','Complementario','premio','acertantes','dinero'])
+df.to_csv('Primitiva.csv',index=False, encoding='utf-8')
