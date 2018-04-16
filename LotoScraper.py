@@ -70,7 +70,7 @@ def queryLoto(combinacion):
        # for ante in ant.find_all('div', {'class': 'resultadoAnterior'}):
          #   print (ante['href'])
 LotoList=[]
-headerList=['c1','c2','c3','c4','c5','c6','Reintegro','Complementario','premio','acertantes','dinero']
+headerList=['c1','c2','c3','c4','c5','c6','Reintegro','Complementario','categoria','acertantes','premio']
 LotoList.append(headerList)
         
 
